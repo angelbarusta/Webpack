@@ -1,0 +1,22 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "curso webpack",
+  "main": "index.js",
+  "scripts": {
+    "build":"npm run webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelbarusta/Webpack.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "@angelbarusta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angelbarusta/Webpack/issues"
+  },
+  "homepage": "https://github.com/angelbarusta/Webpack#readme"
+}
