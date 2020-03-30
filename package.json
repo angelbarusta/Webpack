@@ -26,9 +26,12 @@
     "url": "https://github.com/angelbarusta/Webpack/issues"
   },
   "homepage": "https://github.com/angelbarusta/Webpack#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/runtime": "7.4.5"
+  },
   "devDependencies": {
     "@babel/core": "7.4.5",
+    "@babel/plugin-transform-runtime": "7.4.4",
     "@babel/preset-env": "7.4.5",
     "babel-loader": "8.0.6",
     "css-loader": "2.1.1",
