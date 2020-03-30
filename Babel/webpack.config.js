@@ -19,15 +19,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: "babel-loader",
+        exclude: "/node_modules/"
+      },
+      {
         test: /\.css$/,
+        // use: "css-loader"
+        use: ["style-loader", "css-loader"]
         // use: [
         //   {
         //     loader: MiniCSSExtractPlugin.loader
         //   },
         //   "css-loader"
         // ]
-        // use: "css-loader"
-        use: ["style-loader", "css-loader"]
       }
     ]
   },
