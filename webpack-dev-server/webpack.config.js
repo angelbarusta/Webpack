@@ -20,24 +20,24 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCSSExtractPlugin.loader
-          },
-          "css-loader"
-        ]
+        // use: [
+        //   {
+        //     loader: MiniCSSExtractPlugin.loader
+        //   },
+        //   "css-loader"
+        // ]
         // use: "css-loader"
-        // use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: "Plugins"
-    }),
-    new MiniCSSExtractPlugin({
-      filename: "css/[name].css"
+      title: "webpack-dev-server"
     })
+    // new MiniCSSExtractPlugin({
+    //   filename: "css/[name].css"
+    // })
   ]
 };
