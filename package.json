@@ -7,7 +7,8 @@
     "build": "webpack --entry ./index.js --output ./bundle.js --mode development",
     "build:local": "webpack --mode production",
     "build:external": "webpack --config ./external/webpack.config.js --mode development",
-    "build:multi": "webpack --config ./multi-entry-points/webpack.config.js --mode development"
+    "build:multi": "webpack --config ./multi-entry-points/webpack.config.js --mode development",
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js --mode development"
    
   },
   "repository": {

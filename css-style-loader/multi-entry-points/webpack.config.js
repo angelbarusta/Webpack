@@ -9,5 +9,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "JS/[name].js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: "css-loader"
+      }
+    ]
   }
 };
