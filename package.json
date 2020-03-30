@@ -9,7 +9,6 @@
     "build:external": "webpack --config ./external/webpack.config.js --mode development",
     "build:multi": "webpack --config ./multi-entry-points/webpack.config.js --mode development",
     "build:css": "webpack --config ./css-style-loader/webpack.config.js --mode development"
-   
   },
   "repository": {
     "type": "git",
@@ -26,6 +25,7 @@
   "homepage": "https://github.com/angelbarusta/Webpack#readme",
   "dependencies": {},
   "devDependencies": {
+    "css-loader": "^3.4.2",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   }
