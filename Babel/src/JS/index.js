@@ -1,18 +1,18 @@
 import "../CSS/index.css";
-import text from "./text.js";
+// import text from "./text.js";
 import search from "./search.js";
 import render from "./render.js";
 
-console.log("HOLA PUTO HOME PLUGIN");
+// console.log("HOLA PUTO HOME PLUGIN");
 
-text();
+// text();
 
-if (module.hot) {
-  module.hot.accept("./text.js", () => {
-    // console.log("he recargado en caliente");
-    text();
-  });
-}
+// if (module.hot) {
+//   module.hot.accept("./text.js", () => {
+//     // console.log("he recargado en caliente");
+//     text();
+//   });
+// }
 
 const id = prompt("Quien es ese pokemon?");
 
