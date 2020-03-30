@@ -1,4 +1,13 @@
 import "../CSS/index.css";
+import text from "./text.js";
 
 console.log("HOLA PUTO HOME PLUGIN");
-// document.body.innerHTML = "<h1>Hola Puto</h1>";
+
+text();
+
+if (module.hot) {
+  module.hot.accept("./text.js", () => {
+    console.log("he recargado en caliente");
+    text();
+  });
+}
