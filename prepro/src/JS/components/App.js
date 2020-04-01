@@ -36,9 +36,9 @@ const App = () => {
   return (
     <div>
       MI APP REACT
-      <p className='less'>less</p>
-      <p className='sass'>sass</p>
-      <p className='stylus'>stylus</p>
+      <p className='less'>esto es less</p>
+      <p className='sass'>esto es sass</p>
+      <p className='stylus'>esto es stylus</p>
       <video src={video} width={360} controls poster={logo}></video>
       <p>
         <img src={logo} alt='logo' width={40} />
