@@ -5,8 +5,10 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    home: path.resolve(__dirname, "src/JS/index.js")
+    home: path.resolve(__dirname, "src/JS/index.js"),
+    contact: path.resolve(__dirname, "src/JS/contact.js")
   },
+  //mode:'production'
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "JS/[name].js"
@@ -68,5 +70,12 @@ module.exports = {
     // new MiniCSSExtractPlugin({
     //   filename: "css/[name].css"
     // })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 0,
+      name: "commons"
+    }
+  }
 };

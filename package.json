@@ -15,7 +15,8 @@
     "build:react": "webpack-dev-server --config ./react/webpack.config.js --mode development ",
     "build:hook": "webpack-dev-server --config ./react-hook/webpack.config.js --mode development ",
     "build:url": "webpack-dev-server --config ./url-loader/webpack.config.js --mode development ",
-    "build:prepro": "webpack-dev-server --config ./prepro/webpack.config.js --mode development "
+    "build:prepro": "webpack-dev-server --config ./prepro/webpack.config.js --mode development ",
+    "build:prevent": "webpack --config ./prevent-duplication/webpack.config.js --mode development "
   },
   "repository": {
     "type": "git",
