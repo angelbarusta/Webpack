@@ -1,15 +1,30 @@
 import React, { useState } from "react";
-import data from "./data.json";
 import Loader from "./loader";
+
 import logo from "../../images/platzi.png";
 import video from "../../video/que-es-core.mp4";
 
-console.log(data);
+const data = {
+  loaders: [
+    {
+      name: "css-loader",
+      id: "1"
+    },
+    {
+      name: "style-loader",
+      id: "2"
+    },
+    {
+      name: "babel-loader",
+      id: "3"
+    }
+  ]
+};
 
 const App = () => {
   const [loaderList, setLoaderList] = useState([]);
   const handleClick = () => {
-    setLoaderList(data.loaders);
+    setLoaderList(data);
   };
   const handleClickOcultar = () => {
     setLoaderList([]);
@@ -17,8 +32,9 @@ const App = () => {
   return (
     <div>
       MI APP REACT
+      <video src={video} width={360} controls poster={logo}></video>
       <p>
-        <img src={logo} alt='logo' />
+        <img src={logo} alt='logo' width={40} />
       </p>
       <ul>
         {loaderList.map((item) => (
