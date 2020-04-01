@@ -4,6 +4,10 @@ import Loader from "./loader";
 import logo from "../../images/platzi.png";
 import video from "../../video/que-es-core.mp4";
 
+import "../../sass/index.scss";
+import "../../less/index.less";
+import "../../stylus/index.styl";
+
 const data = {
   loaders: [
     {
@@ -32,6 +36,9 @@ const App = () => {
   return (
     <div>
       MI APP REACT
+      <p className='less'>less</p>
+      <p className='sass'>sass</p>
+      <p className='stylus'>stylus</p>
       <video src={video} width={360} controls poster={logo}></video>
       <p>
         <img src={logo} alt='logo' width={40} />
