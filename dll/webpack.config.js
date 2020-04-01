@@ -13,11 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "JS/[name].js"
   },
-  devServer: {
-    hot: true,
-    open: true,
-    port: 1111
-  },
+  // devServer: {
+  //   hot: true,
+  //   open: true,
+  //   port: 1111
+  // },
   module: {
     rules: [
       {
@@ -40,15 +40,33 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"]
+        use: [
+          {
+            loader: MiniCSSExtractPlugin.loader
+          },
+          "css-loader",
+          "less-loader"
+        ]
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: [
+          {
+            loader: MiniCSSExtractPlugin.loader
+          },
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.styl$/,
-        use: ["style-loader", "css-loader", "stylus-loader"]
+        use: [
+          {
+            loader: MiniCSSExtractPlugin.loader
+          },
+          "css-loader",
+          "stylus-loader"
+        ]
       },
       {
         test: [/\.jpg|png|gif|woff|eot|ttf|svg|mp4|mp3|webm$/],
@@ -66,16 +84,20 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "webpack-dev-server",
       template: path.resolve(__dirname, "index.html")
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require("./modules-manifest.json")
+    }),
+    new MiniCSSExtractPlugin({
+      filename: "css/[name].css",
+      chunkFilename: "css/[id].css"
     })
-    // new MiniCSSExtractPlugin({
-    //   filename: "css/[name].css"
-    // })
-  ],
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      minSize: 0,
-      name: "commons"
-    }
-  }
+  ]
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "all",
+  //     minSize: 0,
+  //     name: "commons"
+  //   }
+  // }
 };

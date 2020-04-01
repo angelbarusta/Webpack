@@ -17,7 +17,8 @@
     "build:url": "webpack-dev-server --config ./url-loader/webpack.config.js --mode development ",
     "build:prepro": "webpack-dev-server --config ./prepro/webpack.config.js --mode development ",
     "build:prevent": "webpack --config ./prevent-duplication/webpack.config.js --mode production",
-    "build:dll": "webpack --config ./prevent-duplication/webpack.config.js --mode production"
+    "build:dll": "webpack --config ./dll/webpack.dll.config.js --mode production",
+    "build:prevent-duplication-fast": "webpack --config ./dll/webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
