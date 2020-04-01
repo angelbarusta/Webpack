@@ -33,12 +33,14 @@ const App = () => {
   const handleClickOcultar = () => {
     setLoaderList([]);
   };
+
   return (
     <div>
       MI APP REACT
       <p className='less'>esto es less</p>
       <p className='sass'>esto es sass</p>
       <p className='stylus'>esto es stylus</p>
+      <p className='post-css'>esto es postcss</p>
       <video src={video} width={360} controls poster={logo}></video>
       <p>
         <img src={logo} alt='logo' width={40} />
