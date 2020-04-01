@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import data from "./data.json";
 import Loader from "./loader";
+import logo from "../../images/platzi.png";
+import video from "../../video/que-es-core.mp4";
 
 console.log(data);
 
@@ -15,6 +17,9 @@ const App = () => {
   return (
     <div>
       MI APP REACT
+      <p>
+        <img src={logo} alt='logo' />
+      </p>
       <ul>
         {loaderList.map((item) => (
           <Loader {...item} key={item.id} />

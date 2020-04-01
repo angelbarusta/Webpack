@@ -19,20 +19,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.js$/, /\.jsx?$/],
+        test: /\.js|jsx$/,
         use: "babel-loader",
         exclude: "/node_modules/"
       },
       {
         test: /\.css$/,
-        // use: "css-loader"
         use: ["style-loader", "css-loader"]
-        // use: [
-        //   {
-        //     loader: MiniCSSExtractPlugin.loader
-        //   },
-        //   "css-loader"
-        // ]
+      },
+      {
+        test: [/\.jpg|png|gif|woff|eot|ttf|svg|mp4|mp3|webm$/],
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 90000
+          }
+        }
       }
     ]
   },
