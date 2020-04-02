@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
+const AddAssetHtmlPlugin = require("add-asset-html-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -76,12 +77,16 @@ module.exports = {
       filename: "css/[name].css",
       chunkFilename: "css/[id].css"
     }),
-
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html")
     }),
     new webpack.DllReferencePlugin({
       manifest: require("./modules-manifest.json")
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, "dist/js/*.dll.js"),
+      outputPath: "js",
+      publicPath: "http://localhost:3001/js"
     })
   ]
 };
