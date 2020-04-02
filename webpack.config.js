@@ -1,95 +1,87 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const webpack = require('webpack')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    home: path.resolve(__dirname,'src/js/index.js'),
-    contact: path.resolve(__dirname,'src/js/contact.js'),
+    home: path.resolve(__dirname, "src/index.js")
   },
-  mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
-    publicPath: 'dist/',
-    chunkFilename: 'js/[id].[chunkhash].js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "js/[name].js",
+    publicPath: "http://localhost:3001/",
+    chunkFilename: "js/[id].[chunkhash].js"
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+        use: "babel-loader",
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
-            }
-          },
-          'postcss-loader',
+
+          "css-loader"
         ]
       },
       {
         test: /\.less$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
-          'css-loader',
-          'less-loader',
+          "css-loader",
+          "less-loader"
         ]
       },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
-          'css-loader',
-          'sass-loader',
+          "css-loader",
+          "sass-loader"
         ]
       },
       {
         test: /\.styl$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
-          'css-loader',
-          'stylus-loader',
+          "css-loader",
+          "stylus-loader"
         ]
       },
       {
         test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         use: {
-          loader: 'url-loader',
+          loader: "url-loader",
           options: {
-            limit: 90000,
+            limit: 1000
           }
         }
-      },
+      }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-      chunkFilename: 'css/[id].css'
+      filename: "css/[name].css",
+      chunkFilename: "css/[id].css"
     }),
-    new webpack.HotModuleReplacementPlugin(),
+
     new HtmlWebpackPlugin({
-      title: 'webpack-dev-server',
-      template: path.resolve(__dirname, 'index.html')
+      template: path.resolve(__dirname, "public/index.html")
     }),
     new webpack.DllReferencePlugin({
-      manifest: require('./modules-manifest.json')
+      manifest: require("./modules-manifest.json")
     })
-  ],
-}
+  ]
+};
